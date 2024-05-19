@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  ubuntu:
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./tests:/home/selenium/tests
+    links:
+      - selenium
+
+  selenium:
+    image: selenium/standalone-chrome:latest
+    environment:
+      - VNC_NO_PASSWORD=1
+      - SCREEN_WIDTH=1800
+      - SCREEN_HEIGHT=960
+    ports:
+      - "4444:4444"
+      - "7900:7900"
+    shm_size: '256mb'
