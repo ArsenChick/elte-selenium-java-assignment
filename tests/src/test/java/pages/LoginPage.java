@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage extends BasePage {
     private By headerTagBy = By.tagName("h1");
 
-    private By emailFieldBy = this.getInoutLocatorByName("email");
-    private By passwordFieldBy = this.getInoutLocatorByName("password");
+    private By emailFieldBy = this.getInputLocatorByName("email");
+    private By passwordFieldBy = this.getInputLocatorByName("password");
     private By loginButtonBy = this.getButtonLocatorByText("LOGIN");
 
     private By forgotPasswordBtnBy = By.xpath("//*[@class='field']//button[contains(@class, 'is-link')]");
@@ -40,7 +40,7 @@ public class LoginPage extends BasePage {
         return By.xpath(String.format("//*[contains(@class, 'field')]//button[text()='%s']", text));
     }
 
-    private By getInoutLocatorByName(String name) {
+    private By getInputLocatorByName(String name) {
         return By.xpath(String.format("//*[@class='field']//input[@name='%s']", name));
     }
 }
