@@ -33,7 +33,7 @@ public class AdvancedTestSuite extends BaseTestSuite {
         try {
             this.cleanUpMailMessages(mailId.get());
         } catch (IOException ex) {
-            System.err.println("Couldn't delete the message. Subsequent test may not pass");
+            System.err.println("Couldn't delete the message. Subsequent tests may not pass");
         }
     }
 
